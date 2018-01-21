@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "353424707007",
+    "firebase_url": "https://chatapk-35189.firebaseio.com",
+    "project_id": "chatapk-35189",
+    "storage_bucket": "chatapk-35189.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353424707007:android:a5f135e41ab0817d",
+        "android_client_info": {
+          "package_name": "com.example.karol.chatapk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353424707007-aipne585kbcsmtp15md66c6cdii52qko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.karol.chatapk",
+            "certificate_hash": "5232f0bfc40706239dc06ec457183abd469c20f7"
+          }
+        },
+        {
+          "client_id": "353424707007-1noclu3op5afkmhoi4k7epcri9so9q01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4O2LfzWpqOXPrRE9skaIRgjPe6CT-aJI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353424707007-1noclu3op5afkmhoi4k7epcri9so9q01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
