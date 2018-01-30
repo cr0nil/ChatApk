@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.karol.chatapk.MainActivity">
+    tools:context="com.example.karol.chatapk.authentication.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:layout_marginEnd="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:cursorVisible="false"
+            android:cursorVisible="true"
             android:defaultFocusHighlightEnabled="false"
             android:editable="false"
             android:ems="10"
@@ -41,8 +41,10 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="15dp"
             android:layout_marginStart="15dp"
+            android:cursorVisible="true"
             android:ems="10"
             android:inputType="textPersonName"
+            android:password="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="127dp" />
@@ -60,6 +62,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.991" />
+
+        <TextView
+            android:id="@+id/failText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
