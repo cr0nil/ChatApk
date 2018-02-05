@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.karol.chatapk.authentication.MainActivity;
 import com.facebook.login.LoginManager;
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -35,24 +36,34 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View v) {
                 EditText inputText = (EditText) findViewById(R.id.inputText);
-                FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessege(inputText.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+                if (FirebaseAuth.getInstance().getCurrentUser().getEmail() == null) {
+                    FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessege(inputText.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getDisplayName()));
+                } else {
+                    FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessege(inputText.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+                }
+
                 inputText.setText("");
+
             }
         });
 
         activity_main2 = (RelativeLayout) findViewById(R.id.activiti2);
         //  Check if not sign-in then navigate Signin page
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            if (FirebaseAuth.getInstance().getCurrentUser().getEmail() != null) {
+                Snackbar.make(activity_main2, "Welcome " + FirebaseAuth.getInstance().getCurrentUser().getEmail(), Snackbar.LENGTH_SHORT).show();}
+            else{
+                    Snackbar.make(activity_main2, "Welcome " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), Snackbar.LENGTH_SHORT).show();
+                }
+                //Load content
+                displayChatMessage();
 
-            Snackbar.make(activity_main2, "Welcome " + FirebaseAuth.getInstance().getCurrentUser().getEmail(), Snackbar.LENGTH_SHORT).show();
-            //Load content
-            displayChatMessage();
         }
 
     }
 
     private void displayChatMessage() {
-        ListView listView = (ListView) findViewById(R.id.list_of_message);
+        final ListView listView = (ListView) findViewById(R.id.list_of_message);
         adapter = new FirebaseListAdapter<ChatMessege>(this, ChatMessege.class, R.layout.list_item, FirebaseDatabase.getInstance().getReference()) {
             @Override
             protected void populateView(View v, ChatMessege model, int position) {
@@ -69,6 +80,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
         };
         listView.setAdapter(adapter);
+
+
     }
 
     public void singOut() {
