@@ -2,29 +2,68 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activiti2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.karol.chatapk.Main2Activity">
+
+    <ListView
+        android:id="@+id/list_of_message"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView2"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="16dp"></ListView>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_below="@+id/imageView"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="17dp"
+        android:layout_alignBottom="@+id/outBtn"
+        android:layout_alignEnd="@+id/sendBtn"
         app:srcCompat="@mipmap/duck" />
 
     <Button
         android:id="@+id/outBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="33dp"
-        android:layout_marginEnd="121dp"
+
         android:text="Log out" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/outBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginEnd="28dp"
+        android:clickable="true"
+        app:backgroundTint="@android:color/holo_green_light"
+        app:fabSize="mini"
+        app:rippleColor="@android:color/holo_green_light"
+        app:srcCompat="@drawable/ic_send_black_24dp" />
+
+    <android.support.design.widget.TextInputLayout
+
+        android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+       android:layout_toLeftOf="@+id/sendBtn"
+         android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/inputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Messege..." />
+</android.support.design.widget.TextInputLayout>
 
 </RelativeLayout>

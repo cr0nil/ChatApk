@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ChatApk.iml" filepath="$PROJECT_DIR$/ChatApk.iml" />
+      <module fileurl="file://G:\Project2\fire\ChatApk.iml" filepath="G:\Project2\fire\ChatApk.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fire.iml" filepath="$PROJECT_DIR$/fire.iml" />
     </modules>
   </component>
 </project>
